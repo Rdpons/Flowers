@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentines De</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: #ffecae;
+        }
+
+        .wrapper {
+            height: 200px;
+            width: 300px;
+            background-color: #7e5f9b;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            z-index: 0;
+        }
+
+        .lid {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-right: 150px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-left: 150px solid transparent;
+            transform-origin: top;
+            transition: transform 0.25s linear;
+        }
+
+        .lid.one {
+            border-top: 100px solid #7e5f9b;
+            transform: rotateX(0deg);
+            z-index: 3;
+            transition-delay: 0.75s;
+        }
+
+        .lid.two {
+            border-top: 100px solid #7e5f9b;
+            transform: rotateX(90deg);
+            z-index: 1;
+            transition-delay: 0.5s;
+        }
+
+        .envelope {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-top: 100px solid transparent;
+            border-left: 150px solid #a87dba;
+            border-bottom: 100px solid #ead7e5;
+            border-right: 150px solid #ead7e5;
+            z-index: 3;
+        }
+
+        .letter {
+            position: absolute;
+            top: 0;
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            border-radius: 15px;
+            z-index: 2;
+            transition: 0.5s;
+        }
+
+        .letter p {
+            text-align: center;
+            font-size: 25px;
+            margin-top: 30px;
+            color: #3B4049;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .wrapper:hover .lid.one {
+            transform: rotateX(90deg);
+            transition-delay: 0s;
+        }
+
+        .wrapper:hover .lid.two {
+            transform: rotateX(180deg);
+            transition-delay: 0.25s;
+        }
+
+        .wrapper:hover .letter {
+            transform: translateY(-50px);
+            transition-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <a href="flower.html">
+        <div class="wrapper" onmouseover="playMusic()" onmouseout="pauseMusic()">
+            <div class="lid one"></div>
+            <div class="lid two"></div>
+            <div class="envelope"></div>
+            <div class="letter">
+                <p>I love You Lab <br>
+                Happy Valentines Day <br><br>
+                ❤️
+                </p>
+            </div>
+        </div>
+    </a>
+
+    <!-- Audio element -->
+    <audio id="loveSong" loop>
+        <source src="./PALAGI  TJ Monterde  OFFICIAL LYRIC VIDEO.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // JavaScript to control music playback
+        function playMusic() {
+            var audio = document.getElementById('loveSong');
+            audio.play();
+        }
+
+        function pauseMusic() {
+            var audio = document.getElementById('loveSong');
+            audio.pause();
+        }
+    </script>
+</body>
+</html>
